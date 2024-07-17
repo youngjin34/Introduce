@@ -3,7 +3,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const teamContainer = document.querySelector('.team-container');
     const imagePath = './image/';
-
+    
+    // 프로필
     const members = [
         {
             name: "신희범",
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             velog: `${imagePath}velog-remove.png`,
             githubLink: "https://github.com/HBeom00",
             velogLink: "https://velog.io/@hbeom00/posts",
-            backgroundImage: `${imagePath}호빵맨.gif`
+            backgroundImage: `${imagePath}shin_profile.png`
         },
         {
             name: "김하영",
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             velog: `${imagePath}velog-remove.png`,
             githubLink: "https://github.com/duddlfkd02",
             velogLink: "https://velog.io/@duddlfkd02/posts",
-            backgroundImage: `${imagePath}아가맨.gif`
+            backgroundImage: `${imagePath}kim_profile.png`
         },
         {
             name: "송재헌",
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             velog: `${imagePath}tstory-remove.png`,
             githubLink: "https://github.com/spmrsong",
             velogLink: "https://pokbeg.tistory.com/",
-            backgroundImage: `${imagePath}세균맨.gif`
+            backgroundImage: `${imagePath}song_profile.png`
         },
         {
             name: "서영진",
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             velog: `${imagePath}velog-remove.png`,
             githubLink: "https://github.com/youngjin34",
             velogLink: "https://velog.io/@epik34/posts",
-            backgroundImage: `${imagePath}카레빵맨.gif`
+            backgroundImage: `${imagePath}seo_profile.png`
         },
         {
             name: "이지영",
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             velog: `${imagePath}velog-remove.png`,
             githubLink: "https://github.com/wldud7788",
             velogLink: "https://velog.io/@rooftop7788/posts",
-            backgroundImage: `${imagePath}버터누나.gif`
+            backgroundImage: `${imagePath}lee_profile.png`
         }
     ];
 
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             advantages: '궁금증이 정말 많아서 이것저것 도전해본다.',
             style: '비전공자라 굉장히 꼼꼼하게 찾아보지만 결국엔 GPT 의 도움을 받는다.',
             tmi: '24시간 에어컨 틀고 있어서 전기세가 걱정됩니다. 그리고 지금 음악 듣고 싶네요.',
-            imgSrc: `${imagePath}song.jpg`
+            imgSrc: `${imagePath}song2.png`
         },
         {
             name: '서영진',
@@ -170,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const memberBtn = document.getElementById("memberBtn");
     const teamMember = document.getElementById("team-member");
     const commentBtn = document.getElementById("commentBtn");
-    const comment = document.getElementById("comment");
+    const comment = document.getElementById("F_div");
 
     introduceBtn.addEventListener('click', () => {
         window.scrollBy({ top: introduce.getBoundingClientRect().top, behavior: 'smooth' });
@@ -194,3 +195,10 @@ $(document).ready(function () {
         $(this).toggleClass("active");
     });
 });
+$('.top_btn').click(function(){
+    $('html, body').animate({scrollTop: '0'}, 680);
+})
+$('.top_btn').bind('click', function() {
+    $('html, body').animate({scrollTop: '0'}, 680);
+  });
+  // 애니메이션 효과로 자연스럽게 이동됨, 0.68초
