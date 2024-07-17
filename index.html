@@ -31,14 +31,18 @@
     <script type="module">
       // Firebase SDK 라이브러리 가져오기
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
-      import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
       import {
         collection,
         addDoc,
+        getDocs,
+        getFirestore,
+        orderBy,
+        query,
+        serverTimestamp,
       } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-      import { getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 
       // Firebase 구성 정보 설정
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
         apiKey: 'AIzaSyAw__WgogTOICCBgOS7uSnX5UEEw5nfLgM',
         authDomain: 'miniproject4-5e73a.firebaseapp.com',
@@ -56,7 +60,10 @@
       $('#postingBtn').click(async function () {
         if ($('#inputBox').val() !== '') {
           let addContent = $('#inputBox').val();
-          let doc = { content: addContent };
+          let doc = {
+            content: addContent,
+            timestamp: serverTimestamp(), //타임스탬프 추가
+          };
           await addDoc(collection(db, 'chattings'), doc);
           alert('게시 완료!!');
           window.location.reload();
@@ -65,43 +72,49 @@
 
       // firebase에 저장된 데이터 가져오기
       const arr = [];
-      let docs = await getDocs(collection(db, 'chattings'));
+      const q = query(
+        collection(db, 'chattings'),
+        orderBy('timestamp', 'desc')
+      ); // 타임스탬프 기준 내림차순 정렬
+      let docs = await getDocs(q);
       docs.forEach((doc) => {
         let row = doc.data();
         let content = row['content'];
-        arr.push(content);
+        let timestamp = row['timestamp']
+          ? row['timestamp'].toDate()
+          : new Date();
+        arr.push({ content, timestamp });
       });
       // console.log(arr);
       // console.log(dateArr);
       arr.forEach((el, index) => {
+        let div = $('<div>').css({
+          border: '3px solid white',
+          'border-radius': '50px',
+          'margin-bottom': '20px',
+          padding: '16px',
+          width: '50%',
+        });
+
         if (index % 2 === 0) {
-          // $("#chatting").css({
-          //   "align-items": "end",
-          // });
-          const div = $('<div>').text(el).css({
-            'text-align': 'left',
-            border: '3px solid white',
-            'border-radius': '50px',
-            'margin-bottom': '20px',
-            padding: '16px',
-            width: '50%',
-          });
-          $('#chatting').append(div);
+          div.css('text-align', 'left');
         } else {
-          // $("#chatting").css({
-          //   "align-items": "baseline",
-          // });
-          const div = $('<div>').text(el).css({
+          div.css({
             'text-align': 'right',
-            border: '3px solid white',
-            'border-radius': '50px',
-            'margin-bottom': '20px',
-            padding: '16px',
-            width: '50%',
             'margin-left': 'auto',
           });
-          $('#chatting').append(div);
         }
+
+        let contentDiv = $('<div>').text(el.content);
+        let timestampDiv = $('<div>').text(el.timestamp.toLocaleString()).css({
+          'font-size': 'big',
+          color: 'gray',
+          'margin-top': '8px',
+        });
+
+        div.append(contentDiv);
+        div.append(timestampDiv);
+        $('#chatting').append(div);
       });
     </script>
   </head>
@@ -209,7 +222,7 @@
     </div>
 
     <!-- 모달 시작 -->
-    <div id="modal_container">
+    <div id="modal_container" style="display: none">
       <div id="team_modal" class="team_modal">
         <span class="closeBtn" id="close-modal">
           <img src="image/close.png" alt="닫기버튼" />
