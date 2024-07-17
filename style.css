@@ -1,4 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap'); */
+@charset 'utf-8';
+
 /* Main Text Style */
 @font-face {
   font-family: 'TTLaundryGothicB';
@@ -99,14 +100,14 @@ td {
 body {
   font-family: 'Pretendard-Regular';
   font-size: 32px;
-  margin: 0;
 }
 
+/* ---- main 시작 = 서영진 ----*/
+
+/* 맨 위로 올라가는 버튼 */
 .top_btn {
-  cursor: pointer;
   position: fixed;
   cursor: pointer;
-  position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 99;
@@ -114,20 +115,18 @@ body {
   height: 50px;
   text-align: center;
   border-radius: 15px;
-  background-image: url(image/scroll_up.png);
+  background-image: url('image/scroll_up.png');
   background-size: contain;
 }
 
+
+/* ---- header  = 서영진 ---- */
 .team {
-  background: url(image/banner3.png) no-repeat;
+  background: url('image/banner3.png') no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-image: url('https://images.unsplash.com/photo-1617042375876-a13e36732a04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
   height: 100vh;
-  width: 100%;
-  margin-bottom: 0;
   color: white;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,9 +134,7 @@ body {
 }
 
 .title {
-  position: absolute;
   font-family: 'TTLaundryGothicB';
-  top: 180px;
 }
 
 .line-title,
@@ -146,70 +143,14 @@ body {
 }
 
 .team-content {
-  position: absolute;
-  top: 300px;
-  width: 80%;
+  width: 800px;
+  margin-top: 30px;
   text-align: center;
-  font-size: 25px;
-  line-height: 45px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
-.introduce {
-  padding-bottom: 90px;
-  margin-bottom: 0;
-  height: 100vh;
-  width: 100%;
-  animation: gradientChange 10s infinite;
-}
-
-.team-introduce {
-  margin: 0;
-  padding-top: 100px;
-}
-
-.introduce-content {
-  display: flex;
-  align-items: center;
-  width: 60%;
-}
-
-.introduce p {
-  padding-right: 200px;
-}
-
-.team-image {
-  width: 100%;
-  height: 350px;
-  border-radius: 10px;
-}
-
-.team-member {
-  background-color: rgb(111, 140, 160);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.team-member>h3 {
-  margin: 0;
-  padding-top: 30px;
-}
-
-.member {
-  width: 50%;
-}
-
-.comment {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* header nav btn */
 
 .divBtn {
   position: absolute;
@@ -226,13 +167,11 @@ body {
   border-radius: 5px;
   width: 200px;
   height: 70px;
-  font-family: 'Dongle';
   font-size: 32px;
   color: white;
 }
 
-/* ------------------------------------------------------- */
-
+/* 영진님 버튼 css */
 .button_container {
   position: absolute;
   left: 0;
@@ -240,15 +179,6 @@ body {
   top: 30%;
 }
 
-.description,
-.link {
-  font-family: 'Amatic SC', cursive;
-  text-align: center;
-}
-
-.description {
-  font-size: 35px;
-}
 
 .btn {
   border: none;
@@ -302,8 +232,69 @@ body {
   font-size: 25px;
 }
 
-/* ------------------------------------------- */
 
+/* ---- introduce =  이지영 ----*/
+
+.introduce {
+  padding-bottom: 90px;
+  margin-bottom: 0;
+  height: 100vh;
+  width: 100%;
+  animation: gradientChange 10s infinite;
+}
+
+.team-introduce {
+  margin: 0;
+  padding-top: 100px;
+}
+
+.introduce-content {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.introduce p {
+  padding-right: 200px;
+}
+
+/* ---- member 시작 = 송재헌 ----*/
+
+.team-image {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.team-member {
+  background-color: rgb(111, 140, 160);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-member>h3 {
+  margin: 0;
+  padding-top: 30px;
+}
+
+.member {
+  width: 50%;
+}
+
+.comment {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* team 전체 감싸는 wrap */
 .wrap {
   height: 100vh;
   display: flex;
@@ -380,9 +371,9 @@ body {
   transform: scale(1.2);
 }
 
-/* ---------------------------------- */
+/* ---- modal 시작 = 김하영 ----*/
 
-.icon {
+.modal_icon {
   width: 80px;
   height: 80px;
   margin-right: 30px;
@@ -391,28 +382,28 @@ body {
 /* 모달 관련 스타일 */
 #modal_container {
   display: none;
+  width: 100%;
   position: fixed;
-  z-index: 10;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100vh;
+  z-index: 10;
   overflow: auto;
+  cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
-  /* 배경 어둡게 */
 }
 
 .team_modal {
-  background-color: #fefefe;
+  height: 100vh;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #fefefe;
+  border-radius: 25px;
 }
 
 .team_modal .closeBtn img {
@@ -425,9 +416,8 @@ body {
 }
 
 #member_image {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 35px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   border-radius: 100%;
 }
@@ -438,11 +428,17 @@ body {
 }
 
 #member_name {
-  padding-bottom: 10px;
+  padding-top: 20px;
+  font-family: 'TTLaundryGothicB';
+}
+
+#member_age {
+  padding-bottom: 30px;
+  font-size: 16px;
 }
 
 #member_content {
-  margin: 50px auto 0px;
+  font-size: 16px;
 }
 
 #member_content .content_inner {
@@ -456,6 +452,7 @@ body {
   border-radius: 20px;
 }
 
+/* ---- modal End ---- */
 
 /********* ourTeam style Start *********/
 /* -------- title style Start ------- */

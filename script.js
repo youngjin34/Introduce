@@ -1,9 +1,7 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const teamContainer = document.querySelector('.team-container');
     const imagePath = './image/';
-    
+
     // 프로필
     const members = [
         {
@@ -123,7 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById('close-modal');
     const teamModal = document.getElementById('modal_container');
 
+
     function showModal(member) {
+        teamModal.style.display = "none";
         teamModal.style.display = "flex"; // flex로 변경하여 중앙에 위치하도록 함
 
         // 멤버 사진
@@ -140,18 +140,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const memberInfo = document.getElementById('member_content');
         memberInfo.innerHTML = `
             <div class="content_inner">
-                <img src="${imagePath}icon-agree.png" alt="협업" class="icon">
+                <img src="${imagePath}icon-agree.png" alt="협업" class="modal_icon">
                 ${member.style}
             </div>
             <div class="content_inner">
-                <img src="${imagePath}icon-positive.png" alt="장점" class="icon">
+                <img src="${imagePath}icon-positive.png" alt="장점" class="modal_icon">
                 ${member.advantages}
             </div>
             <div class="content_inner">
-                <img src="${imagePath}icon-tmi.png" alt="tmi" class="icon">
+                <img src="${imagePath}icon-tmi.png" alt="tmi" class="modal_icon">
                 ${member.tmi}
             </div>
         `;
+
+
     }
 
     // 닫기 버튼 누르면 모달 사라짐
@@ -195,10 +197,10 @@ $(document).ready(function () {
         $(this).toggleClass("active");
     });
 });
-$('.top_btn').click(function(){
-    $('html, body').animate({scrollTop: '0'}, 680);
+$('.top_btn').click(function () {
+    $('html, body').animate({ scrollTop: '0' }, 680);
 })
-$('.top_btn').bind('click', function() {
-    $('html, body').animate({scrollTop: '0'}, 680);
-  });
-  // 애니메이션 효과로 자연스럽게 이동됨, 0.68초
+$('.top_btn').bind('click', function () {
+    $('html, body').animate({ scrollTop: '0' }, 680);
+});
+// 애니메이션 효과로 자연스럽게 이동됨, 0.68초
