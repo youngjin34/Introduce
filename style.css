@@ -1,296 +1,473 @@
-@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
-        /******* Fonts Import Start **********/
-        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-        /********* Fonts Face CSS End **********/
+* {
+  box-sizing: border-box;
+}
 
-        /******* Common Element CSS Start ******/
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
+::-webkit-scrollbar {
+  display: none;
+}
 
-        body {
-            font-family: "Roboto", sans-serif;
-            font-size: 16px;
-        }
+body {
+  font-family: 'Dongle';
+  font-size: 32px;
+  margin: 0;
+}
 
-        .clear {
-            clear: both;
-        }
+.team {
+  background-image: url('https://images.unsplash.com/photo-1617042375876-a13e36732a04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 0;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-        img {
-            max-width: 100%;
-            border: 0px;
-        }
+.title {
+  position: absolute;
+  top: 200px;
+  left: 46%;
+}
 
-        ul,
-        ol {
-            list-style: none;
-        }
+.team-content {
+  position: absolute;
+  top: 320px;
+  left: 46%;
+  width: 42%;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            outline: none;
-            transition: all 0.4s ease-in-out;
-            -webkit-transition: all 0.4s ease-in-out;
-        }
+.introduce {
+  padding-bottom: 90px;
+  margin-bottom: 0;
+  height: 100vh;
+  width: 100%;
+  animation: gradientChange 10s infinite;
+}
 
-        a:focus,
-        a:active,
-        a:visited,
-        a:hover {
-            text-decoration: none;
-            outline: none;
-        }
+.team-introduce {
+  margin: 0;
+  padding-top: 100px;
+}
 
-        a:hover {
-            color: #e73700;
-        }
+.introduce-content {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
 
-        h2 {
-            margin-bottom: 48px;
-            padding-bottom: 16px;
-            font-size: 20px;
-            line-height: 28px;
-            font-weight: 700;
-            position: relative;
-            text-transform: capitalize;
-        }
+.introduce p {
+  padding-right: 200px;
+}
 
-        h3 {
-            margin: 0 0 10px;
-            font-size: 28px;
-            line-height: 36px;
-        }
+.team-image {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+}
 
-        button {
-            outline: none !important;
-        }
+.team-member {
+  background-color: rgb(111, 140, 160);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-        /******* Common Element CSS End *********/
+.team-member>h3 {
+  margin: 0;
+  padding-top: 30px;
+}
 
-        /* -------- title style ------- */
-        .line-title {
-            position: relative;
-            width: 400px;
-        }
+.member {
+  width: 50%;
+}
 
-        .line-title::before,
-        .line-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            border-radius: 2px;
-        }
+.comment {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-        .line-title::before {
-            width: 100%;
-            background: #f2f2f2;
-        }
+.divBtn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+}
 
-        .line-title::after {
-            width: 32px;
-            background: #e73700;
-        }
+.divBtn>button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 70px;
+  font-family: 'Dongle';
+  font-size: 32px;
+  color: white;
+}
 
-        /******* Middle section CSS Start ******/
-        /* -------- Landing page ------- */
-        .card-section {
-            padding: 60px 50px;
-            height: 100vh;
-        }
+/* ------------------------------------------------------- */
 
-        .card-section .owl-stage {
-            margin: 15px 0;
-            display: flex;
-            display: -webkit-flex;
-        }
+.button_container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+}
 
-        .card-section .item {
-            margin: 0 15px 60px;
-            width: 400px;
-            height: 400px;
-            display: flex;
-            display: -webkit-flex;
-            align-items: flex-end;
-            -webkit-align-items: flex-end;
-            background: #343434 no-repeat center center / cover;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s ease-in-out;
-            -webkit-transition: all 0.4s ease-in-out;
-            cursor: pointer;
-        }
+.description,
+.link {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+}
 
-        .card-section .item.active {
-            width: 500px;
-            box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-            -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-        }
+.description {
+  font-size: 35px;
+}
 
-        .card-section .item:after {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            top: 0;
-            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-        }
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .card-section .item-desc {
-            padding: 0 24px 12px;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            transform: translateY(calc(100% - 54px));
-            -webkit-transform: translateY(calc(100% - 54px));
-            transition: all 0.4s ease-in-out;
-            -webkit-transition: all 0.4s ease-in-out;
-        }
+.btn span {
+  position: relative;
+  z-index: 1;
+}
 
-        .card-section .item.active .item-desc {
-            transform: none;
-            -webkit-transform: none;
-        }
+.btn:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78c7d2;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
 
-        .card-section .item-desc p {
-            opacity: 0;
-            -webkit-transform: translateY(32px);
-            transform: translateY(32px);
-            transition: all 0.4s ease-in-out 0.2s;
-            -webkit-transition: all 0.4s ease-in-out 0.2s;
-        }
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
 
-        .card-section .item.active .item-desc p {
-            opacity: 1;
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
+.link {
+  font-size: 20px;
+  margin-top: 30px;
+}
 
-        .card-section .owl-theme.custom-carousel .owl-dots {
-            margin-top: -20px;
-            position: relative;
-            z-index: 5;
-        }
+.link a {
+  color: #000;
+  font-size: 25px;
+}
 
-        /******** Middle section CSS End *******/
+/* ------------------------------------------- */
 
-        /***** responsive css Start ******/
+.wrap {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-        @media (min-width: 992px) and (max-width: 1199px) {
-            h2 {
-                margin-bottom: 32px;
-            }
+.team-title {
+  display: flex;
+  justify-content: center;
+}
 
-            h3 {
-                margin: 0 0 8px;
-                font-size: 24px;
-                line-height: 32px;
-            }
+.team-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
 
-            /* -------- Landing page ------- */
-            .card-section {
-                padding: 50px 30px;
-            }
+.member {
+  display: inline-block;
+  margin: 20px;
+  width: 200px;
+  position: relative;
+}
 
-            .card-section .item {
-                margin: 0 12px 60px;
-                width: 260px;
-                height: 360px;
-            }
+.photo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
 
-            .card-section .item.active {
-                width: 400px;
-            }
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-            .card-section .item-desc {
-                transform: translateY(calc(100% - 46px));
-                -webkit-transform: translateY(calc(100% - 46px));
-            }
-        }
+.photo .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
 
-        @media (min-width: 768px) and (max-width: 991px) {
-            h2 {
-                margin-bottom: 32px;
-            }
+.photo:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
 
-            h3 {
-                margin: 0 0 8px;
-                font-size: 24px;
-                line-height: 32px;
-            }
+.icons {
+  margin-top: 10px;
+}
 
-            .line-title {
-                width: 330px;
-            }
+.icons a img {
+  height: 24px;
+  margin: 5px;
+  transition: transform 0.3s;
+}
 
-            /* -------- Landing page ------- */
-            .card-section {
-                padding: 50px 30px 40px;
-            }
+.icons a img:hover {
+  transform: scale(1.2);
+}
 
-            .card-section .item {
-                margin: 0 12px 60px;
-                height: 330px;
-            }
+/* ---------------------------------- */
 
-            .card-section .item.active {
-                width: 360px;
-            }
+.icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 30px;
+}
 
-            .card-section .item-desc {
-                transform: translateY(calc(100% - 42px));
-                -webkit-transform: translateY(calc(100% - 42px));
-            }
-        }
+/* 모달 관련 스타일 */
+#modal_container {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* 배경 어둡게 */
+}
 
-        @media (max-width: 767px) {
-            body {
-                font-size: 14px;
-            }
+.team_modal {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-            h2 {
-                margin-bottom: 20px;
-            }
+.team_modal .closeBtn img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
-            h3 {
-                margin: 0 0 8px;
-                font-size: 19px;
-                line-height: 24px;
-            }
+#member_image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 35px;
+  overflow: hidden;
+  border-radius: 100%;
+}
 
-            .line-title {
-                width: 250px;
-            }
+#member_image img {
+  width: 100%;
+  height: 100%;
+}
 
-            /* -------- Landing page ------- */
-            .card-section {
-                padding: 30px 15px 20px;
-            }
+#member_name {
+  padding-bottom: 10px;
+}
 
-            .card-section .item {
-                margin: 0 10px 40px;
-                width: 200px;
-                height: 280px;
-            }
+#member_content {
+  margin: 50px auto 0px;
+}
 
-            .card-section .item.active {
-                width: 270px;
-                box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-                -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-            }
+#member_content .content_inner {
+  width: 400px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border-radius: 20px;
+}
 
-            .card-section .item-desc {
-                padding: 0 14px 5px;
-                transform: translateY(calc(100% - 42px));
-                -webkit-transform: translateY(calc(100% - 42px));
-            }
-        }
+
+/********* ourTeam style Start *********/
+/* -------- title style Start ------- */
+.line-title {
+  position: relative;
+  width: 400px;
+  padding-bottom: 30px;
+}
+
+.line-title::before,
+.line-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.line-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.line-title::after {
+  width: 32px;
+  background: #0d0058;
+}
+
+/* -------- title style End------- */
+/******* Middle section CSS Start ******/
+
+.card-section {
+  padding: 30px 50px;
+  height: 100vh;
+  background: #a6b5db;
+  color: white;
+}
+
+.card-section .owl-stage {
+  margin: 15px 0;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.card-section .item {
+  margin: 0 15px 60px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.card-section .item.active {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card-section .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.card-section .item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.card-section .item.active .item-desc {
+  transform: none;
+  -webkit-transform: none;
+}
+
+.card-section .item-desc h3 {
+  margin: 0;
+}
+
+.card-section .item-desc p {
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+
+.card-section .item.active .item-desc h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.card-section .item.active .item-desc p {
+  line-height: 32px;
+  padding-right: 0;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.card-section .owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px !important;
+  position: relative;
+  z-index: 5;
+}
+
+/******** Middle section CSS End *******/
+/******** ourTeam style End ********/
