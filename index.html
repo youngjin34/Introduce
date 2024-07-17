@@ -1,262 +1,245 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4조 코린이</title>
-    <!-- cdn jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="./chat.css" />
-    <link rel="stylesheet" href="./style.css" />
 
-    <!-- 신희범 js -->
-    <script type="module">
-      // Firebase SDK 라이브러리 가져오기
-      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
-      import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-      import {
-        collection,
-        addDoc,
-      } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-      import { getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-      // Firebase 구성 정보 설정
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: 'AIzaSyAw__WgogTOICCBgOS7uSnX5UEEw5nfLgM',
-        authDomain: 'miniproject4-5e73a.firebaseapp.com',
-        projectId: 'miniproject4-5e73a',
-        storageBucket: 'miniproject4-5e73a.appspot.com',
-        messagingSenderId: '281998620106',
-        appId: '1:281998620106:web:373fb73ebacf4b9f9d8b33',
-        measurementId: 'G-GYZQBR589N',
-      };
-      // Firebase 인스턴스 초기화
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-      // 버튼 클릭 시, firebase에 데이터 저장
-      $('#postingBtn').click(async function () {
-        if ($('#inputBox').val() !== '') {
-          let addContent = $('#inputBox').val();
-          4;
-          let time = Date.now();
-          let doc = { content: addContent, timeStamp: time };
-          await addDoc(collection(db, 'chattings'), doc);
-          alert('게시 완료!!');
-          window.location.reload();
-        } else alert('내용을 입력해 주세요');
-      });
-      // firebase에 저장된 데이터 가져오기
-      const arr = [];
-      const numArr = [];
-      let docs = await getDocs(collection(db, 'chattings'));
-      docs.forEach((doc) => {
-        let row = doc.data();
-        let content = row['content'];
-        let timeStampNum = row['timeStamp'];
-        const temp = [timeStampNum, content];
-        arr.push(temp);
-        numArr.push(timeStampNum);
-      });
-      numArr.sort((a, b) => b - a);
-      const result = [];
-      for (let i = 0; i < numArr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-          if (arr[j][0] === numArr[i]) result.push(arr[j][1]);
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4조 코린이</title>
+  <!-- cdn jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./chat.css" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- 신희범 js -->
+  <script type="module">
+    // Firebase SDK 라이브러리 가져오기
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+    import {
+      collection,
+      addDoc,
+    } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+    import { getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+    // Firebase 구성 정보 설정
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: 'AIzaSyAw__WgogTOICCBgOS7uSnX5UEEw5nfLgM',
+      authDomain: 'miniproject4-5e73a.firebaseapp.com',
+      projectId: 'miniproject4-5e73a',
+      storageBucket: 'miniproject4-5e73a.appspot.com',
+      messagingSenderId: '281998620106',
+      appId: '1:281998620106:web:373fb73ebacf4b9f9d8b33',
+      measurementId: 'G-GYZQBR589N',
+    };
+    // Firebase 인스턴스 초기화
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    // 버튼 클릭 시, firebase에 데이터 저장
+    $('#postingBtn').click(async function () {
+      if ($('#inputBox').val() !== '') {
+        let addContent = $('#inputBox').val();
+        4;
+        let time = Date.now();
+        let doc = { content: addContent, timeStamp: time };
+        await addDoc(collection(db, 'chattings'), doc);
+        alert('게시 완료!!');
+        window.location.reload();
+      } else alert('내용을 입력해 주세요');
+    });
+    // firebase에 저장된 데이터 가져오기
+    const arr = [];
+    const numArr = [];
+    let docs = await getDocs(collection(db, 'chattings'));
+    docs.forEach((doc) => {
+      let row = doc.data();
+      let content = row['content'];
+      let timeStampNum = row['timeStamp'];
+      const temp = [timeStampNum, content];
+      arr.push(temp);
+      numArr.push(timeStampNum);
+    });
+    numArr.sort((a, b) => b - a);
+    const result = [];
+    for (let i = 0; i < numArr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j][0] === numArr[i]) result.push(arr[j][1]);
       }
-      result.forEach((el, index) => {
-        if (index % 2 === 0) {
-          const div = $('<div>').text(el).css({
-            'text-align': 'left',
-            border: '3px solid white',
-            'border-radius': '50px',
-            margin: '10px 0 10px 0',
-            padding: '8px',
-            width: '50%',
-            'font-size': '20px',
-          });
-          $('#chatting').append(div);
-        } else {
-          const div = $('<div>').text(el).css({
-            'text-align': 'right',
-            border: '3px solid white',
-            'border-radius': '50px',
-            margin: '10px 0 10px 0',
-            padding: '8px',
-            width: '50%',
-            'margin-left': 'auto',
-            'font-size': '20px',
-          });
-          $('#chatting').append(div);
-        }
-      });
-    </script>
-  </head>
+    }
+    result.forEach((el, index) => {
+      if (index % 2 === 0) {
+        const div = $('<div>').text(el).css({
+          border: '3px solid white',
+          'border-radius': '10px',
+          margin: '20px 0',
+          padding: '8px 14px',
+          'max-width': '60%',
+          'font-size': '16px',
+          background: 'rgba(233, 233, 233, 0.5)'
+        });
+        $('#chatting').append(div);
+      } else {
+        const div = $('<div>').text(el).css({
+          'text-align': 'right',
+          border: '3px solid white',
+          'border-radius': '10px',
+          margin: '20px 0',
+          padding: '8px 14px',
+          'max-width': '60%',
+          'margin-left': 'auto',
+          'font-size': '16px',
+          background: 'rgba(233, 233, 233, 0.5)'
+        });
+        $('#chatting').append(div);
+      }
+    });
+  </script>
+</head>
 
-  <body>
-    <!-- 팀원소개 서영진 -->
-    <div class="team" id="team">
-      <h1 class="title">팀 "코린이"를 소개합니다!</h1>
-      <p class="team-content">
-        안녕하세요! 팀 코린이입니다...! <br />웹 개발에 대한 열정과 호기심으로
-        뭉친 프론트엔드 초보 개발자들입니다! <br />
-        다양한 배경을 가진 팀원들이 모인 코린이는 각자의 강점을 살려 협력하며,
-        사용자에게 더 나은 경험을 제공할 수 있는 멋진 웹 애플리케이션을
-        개발하고자 노력하고 있습니다.
-      </p>
-      <div class="divBtn buttons">
-        <button class="btn" id="introduceBtn">
-          <span>팀 소개</span>
-        </button>
-        <button class="btn" id="memberBtn">
-          <span>팀원</span>
-        </button>
-        <button class="btn" id="commentBtn">
-          <span>댓글 달기</span>
-        </button>
-      </div>
+<body>
+  <!-- 팀원소개 서영진 -->
+  <div class="team" id="team">
+    <h1 class="title">팀 "코린이"를 소개합니다!</h1>
+    <p class="team-content">
+      안녕하세요! 팀 코린이입니다...! <br />웹 개발에 대한 열정과 호기심으로
+      뭉친 프론트엔드 초보 개발자들입니다! <br />
+      다양한 배경을 가진 팀원들이 모인 코린이는 각자의 강점을 살려 협력하며,
+      사용자에게 더 나은 경험을 제공할 수 있는 멋진 웹 애플리케이션을
+      개발하고자 노력하고 있습니다.
+    </p>
+    <div class="divBtn buttons">
+      <button class="btn" id="introduceBtn">
+        <span>팀 소개</span>
+      </button>
+      <button class="btn" id="memberBtn">
+        <span>팀원</span>
+      </button>
+      <button class="btn" id="commentBtn">
+        <span>댓글 달기</span>
+      </button>
     </div>
+  </div>
 
-    <!-- 팀원소개 이지영 -->
-    <section class="card-section introduce" id="introduce">
-      <div class="top_btn"></div>
-      <h2 class="line-title">코린이 조는?</h2>
-      <p class="card-subtitle">
-        다양한 배경을 가진 팀원들이 모인 코린이는 각자의 강점을 살려 협력하며,
-        <br />
-        사용자에게 더 나은 경험을 제공할 수 있는 멋진 웹 애플리케이션을
-        개발하고자 노력하고 있습니다.
-      </p>
-      <div class="owl-carousel custom-carousel owl-theme custom_owl">
-        <div
-          class="item active"
-          style="
+  <!-- 팀원소개 이지영 -->
+  <section class="card-section introduce" id="introduce">
+    <div class="top_btn"></div>
+    <h2 class="line-title">코린이 조는?</h2>
+    <p class="card-subtitle">
+      다양한 배경을 가진 팀원들이 모인 코린이는 각자의 강점을 살려 협력하며,
+      <br />
+      사용자에게 더 나은 경험을 제공할 수 있는 멋진 웹 애플리케이션을
+      개발하고자 노력하고 있습니다.
+    </p>
+    <div class="owl-carousel custom-carousel owl-theme custom_owl">
+      <div class="item active" style="
             background-image: url(https://plus.unsplash.com/premium_photo-1677529496297-fd0174d65941?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-          "
-        >
-          <div class="item-desc">
-            <h3>우리팀만의 특징은?</h3>
-            <p>꼼꼼하고 섬세하며 내향과 외향이 어우러져있어요~</p>
-          </div>
+          ">
+        <div class="item-desc">
+          <h3>우리팀만의 특징은?</h3>
+          <p>꼼꼼하고 섬세하며 내향과 외향이 어우러져있어요~</p>
         </div>
-        <div
-          class="item"
-          style="
+      </div>
+      <div class="item" style="
             background-image: url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-          "
-        >
-          <div class="item-desc">
-            <h3>우리팀의 궁극적인 목표</h3>
-            <p>
-              1. 자기가 맡은 임무는 끝까지 최선을 다하기! <br />
-              2. 불화 없이 행복 코딩하기!
-            </p>
-          </div>
-        </div>
-        <div
-          class="item"
-          style="
-            background-image: url(https://images.unsplash.com/photo-1593526613712-7b4b9a707330?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-          "
-        >
-          <div class="item-desc">
-            <h3>우리 팀의 약속!</h3>
-            <p>
-              1. 지각 절대 X <br />
-              2. 일정 있을 때 사전 통보! <br />
-              3. 눈치 주지 말기 <br />
-              4. 소통 많이 하기! <br />
-            </p>
-          </div>
-        </div>
-        <div
-          class="item"
-          style="
-            background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);
-          "
-        >
-          <div class="item-desc">
-            <h3>우리 팀의 강점</h3>
-            <p>
-              1. 꼼꼼하고 섬세해요 <br />
-              2. 다양한 경험과 배경을 가지고 있어요 <br />
-              3. 자기 주장이 뚜렷하고, 상대방의 의견을 존중하며, 의견을 자유롭게
-              나눠요
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 팀원소개 송재헌 -->
-    <section class="member_wrapper">
-      <div class="wrap" id="team-member">
-        <h2 class="team-title">코린이들</h2>
-        <div class="team-container"></div>
-      </div>
-    </section>
-
-    <!-- 방명록 신희범 -->
-    <section class="chat_wrapper">
-      <div id="F_div">
-        <div id="chat-title">
-          <h2 class="chat-title">어떠셨나요?</h2>
-          <p id="subtitle">
-            지금까지 코린이들을 소개해 봤는데요!!
-            <br />
-            전체적으로 어떠셨는지 좋았던 점, 아쉬운 점을 남겨주세요!!
-            <br />
-            댓글로 이름과 내용을 작성해 주신 분들 중 추첨을 통해
-            <br />
-            <span id="present">♡서영진♡</span>님이 치킨 기프티콘을 드립니다!!!!
-            <br />
-            모두 코멘트 남기고 치킨 먹어요 ^O^
+          ">
+        <div class="item-desc">
+          <h3>우리팀의 궁극적인 목표</h3>
+          <p>
+            1. 자기가 맡은 임무는 끝까지 최선을 다하기! <br />
+            2. 불화 없이 행복 코딩하기!
           </p>
         </div>
-        <div class="arrow">
-          <img id="finger_animation" src="/image/finger.png" alt="animation" />
-        </div>
-        <div id="chatting-Bar">
-          <p>댓글창</p>
-          <div id="chatting"></div>
-          <div id="func">
-            <input type="text" id="inputBox" placeholder="댓글을 남겨주세요" />
-            <button id="postingBtn">
-              <img src="./image/sendChat.png" id="sendChat" />
-            </button>
-          </div>
+      </div>
+      <div class="item" style="
+            background-image: url(https://images.unsplash.com/photo-1593526613712-7b4b9a707330?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          ">
+        <div class="item-desc">
+          <h3>우리 팀의 약속!</h3>
+          <p>
+            1. 지각 절대 X <br />
+            2. 일정 있을 때 사전 통보! <br />
+            3. 눈치 주지 말기 <br />
+            4. 소통 많이 하기! <br />
+          </p>
         </div>
       </div>
-    </section>
-
-    <!-- 모달 김하영 -->
-    <div id="modal_container">
-      <div id="team_modal" class="team_modal">
-        <span class="closeBtn" id="close-modal">
-          <img src="image/close.png" alt="닫기버튼" />
-        </span>
-        <div id="member_image"></div>
-        <h3 id="member_name"></h3>
-        <p id="member_age"></p>
-        <div id="member_content"></div>
+      <div class="item" style="
+            background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);
+          ">
+        <div class="item-desc">
+          <h3>우리 팀의 강점</h3>
+          <p>
+            1. 꼼꼼하고 섬세해요 <br />
+            2. 다양한 경험과 배경을 가지고 있어요 <br />
+            3. 자기 주장이 뚜렷하고, 상대방의 의견을 존중하며, 의견을 자유롭게
+            나눠요
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- js -->
-    <script src="script.js"></script>
-  </body>
+  <!-- 팀원소개 송재헌 -->
+  <section class="member_wrapper">
+    <div class="wrap" id="team-member">
+      <h2 class="team-title">코린이들</h2>
+      <div class="team-container"></div>
+    </div>
+  </section>
+
+  <!-- 방명록 신희범 -->
+  <section class="chat_wrapper">
+    <div id="F_div">
+      <div id="chat-title">
+        <h2 class="chat-title">어떠셨나요?</h2>
+        <p id="subtitle">
+          지금까지 코린이들을 소개해 봤는데요!!
+          <br />
+          전체적으로 어떠셨는지 좋았던 점, 아쉬운 점을 남겨주세요!!
+          <br />
+          댓글로 이름과 내용을 작성해 주신 분들 중 추첨을 통해
+          <br />
+          <span id="present">♡서영진♡</span>님이 치킨 기프티콘을 드립니다!!!!
+          <br />
+          모두 코멘트 남기고 치킨 먹어요 ^O^
+        </p>
+      </div>
+      <div class="arrow">
+        <img id="finger_animation" src="/image/finger.png" alt="animation" />
+      </div>
+      <div id="chatting-Bar">
+        <p class="chatting-Bar-title">댓글창</p>
+        <div id="chatting"></div>
+        <div id="func">
+          <input type="text" id="inputBox" placeholder="댓글을 남겨주세요" />
+          <button id="postingBtn">
+            <img src="./image/sendChat.png" id="sendChat" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 모달 김하영 -->
+  <div id="modal_container">
+    <div id="team_modal" class="team_modal">
+      <span class="closeBtn" id="close-modal">
+        <img src="image/close.png" alt="닫기버튼" />
+      </span>
+      <div id="member_image"></div>
+      <h3 id="member_name"></h3>
+      <p id="member_age"></p>
+      <div id="member_content"></div>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script src="script.js"></script>
+</body>
+
 </html>

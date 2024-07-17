@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${member.tmi}
             </div>
         `;
-    disableScroll();
   }
 
   // 닫기 버튼 누르면 모달 사라짐
@@ -167,16 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function disableScroll() {
-    // 현재 페이지 스크롤 위치 가져오기
-    scrollTop = window.scrollY || document.documentElement.scrollTop;
-    scrollLeft = window.scrollX || document.documentElement.scrollLeft,
-
-      // 스크롤을 시도하면 이전 값으로 설정
-      window.onscroll = function () {
-        window.scrollTo(scrollLeft, scrollTop);
-      };
-  }
 
   const introduceBtn = document.getElementById("introduceBtn");
   const introduce = document.getElementById("introduce");

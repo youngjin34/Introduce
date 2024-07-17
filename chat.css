@@ -9,29 +9,31 @@
   position: relative;
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
+
 .chat-title {
   font-family: 'TTLaundryGothicB';
 }
 
 #chatting-Bar {
-  background-color: #8ec5fc;
+  background-color: #aad4ff;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 500px;
   height: 100%;
-  border-radius: 50px;
+  padding: 15px;
+  border-radius: 30px;
 }
+
 #func {
-  padding-bottom: 20px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
 }
-#title {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-size: 28px;
-  font-weight: bold;
-}
+
+
 #postingBtn {
   cursor: pointer;
   border-radius: 50px;
@@ -39,35 +41,50 @@
   background-color: white;
   font-weight: bold;
   width: 60px;
-  height: 32px;
+  height: 45px;
 }
+
 #postingBtn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  transition: 0.2s;
 }
+
+.chatting-Bar-title {
+  margin-top: 8px;
+  font-family: 'TTLaundryGothicB';
+}
+
 #inputBox {
   border-radius: 10px;
   border: 1px solid white;
   width: 400px;
   height: 45px;
+  padding: 10px;
+  outline: none;
 }
+
 #inputBox::placeholder {
-  text-align: center;
-  font-weight: bold;
+  font-weight: 500;
 }
+
+
 #chatting {
   width: 100%;
   padding: 0 20px 0 20px;
   overflow-y: scroll;
   height: 650px;
 }
+
 #chat-title {
   color: white;
 }
+
 #subtitle {
   padding-top: 40px;
   font-size: 20px;
   line-height: 30px;
 }
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -76,17 +93,21 @@
   font-size: 32px;
   animation: modifyArrow 0.5s linear infinite;
 }
+
 @keyframes modifyArrow {
   50% {
     transform: translate(16px, -50%);
   }
 }
+
 #present {
   color: red;
 }
+
 #finger_animation {
   width: 70px;
 }
+
 #sendChat {
   width: 16px;
 }
