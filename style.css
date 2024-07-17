@@ -3,7 +3,8 @@
 /* Main Text Style */
 @font-face {
   font-family: 'TTLaundryGothicB';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2')
+    format('woff2');
   font-weight: 700;
   font-style: normal;
 }
@@ -11,7 +12,8 @@
 /* Sub Text Style */
 @font-face {
   font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -108,17 +110,16 @@ body {
 .top_btn {
   position: fixed;
   cursor: pointer;
-  bottom: 30px;
-  right: 30px;
+  bottom: 50px;
+  right: 50px;
   z-index: 99;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   border-radius: 15px;
   background-image: url('image/scroll_up.png');
   background-size: contain;
 }
-
 
 /* ---- header  = 서영진 ---- */
 .team {
@@ -131,6 +132,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 300px;
 }
 
 .title {
@@ -153,85 +155,63 @@ body {
 /* header nav btn */
 
 .divBtn {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  position: fixed;
+  cursor: pointer;
+  bottom: 500px;
+  right: 50px;
+  z-index: 99;
+  height: 50px;
 }
 
-.divBtn>button {
+.divBtn > button {
+  font-family: 'TTLaundryGothicB';
+
+  text-align: end;
   cursor: pointer;
+  padding-bottom: 100px;
   background: none;
   border: none;
-  border-radius: 5px;
-  width: 200px;
+  width: 120px;
   height: 70px;
-  font-size: 32px;
-  color: white;
+  font-size: 22px;
+  color: black;
+}
+
+.divBtn > button:hover {
+  animation: jittery 4s infinite;
 }
 
 /* 영진님 버튼 css */
-.button_container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30%;
+
+@keyframes jittery {
+  5%,
+  50% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  25% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.15) rotate(-3deg);
+  }
+  35% {
+    transform: scale(1.15) rotate(2deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(0);
+  }
 }
-
-
-.btn {
-  border: none;
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  outline: none;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  background-color: #222;
-  padding: 17px 60px;
-  margin: 0 auto;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn span {
-  position: relative;
-  z-index: 1;
-}
-
-.btn:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 490%;
-  width: 140%;
-  background: #78c7d2;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
-  transform: translateX(-98%) translateY(-25%) rotate(45deg);
-}
-
-.btn:hover:after {
-  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-  transform: translateX(-9%) translateY(-25%) rotate(45deg);
-}
-
-.link {
-  font-size: 20px;
-  margin-top: 30px;
-}
-
-.link a {
-  color: #000;
-  font-size: 25px;
-}
-
 
 /* ---- introduce =  이지영 ----*/
 
@@ -276,7 +256,7 @@ body {
   justify-content: center;
 }
 
-.team-member>h3 {
+.team-member > h3 {
   margin: 0;
   padding-top: 30px;
 }
@@ -362,7 +342,7 @@ body {
 }
 
 .icons a img {
-  height: 24px;
+  height: 35px;
   margin: 5px;
   transition: transform 0.3s;
 }
@@ -464,7 +444,7 @@ body {
 
 .line-title::before,
 .line-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -533,7 +513,7 @@ body {
 }
 
 .card-section .item:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   height: 100%;
