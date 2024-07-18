@@ -149,7 +149,7 @@ body {
   margin-top: 30px;
   text-align: center;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 40px;
 }
 
 /* header nav btn */
@@ -277,35 +277,60 @@ body {
 /* team 전체 감싸는 wrap */
 .wrap {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 120px 80px;
 }
 
+  /* TeamTitle css 지영 추가 Start */
 .team-title {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: 500px;
+  padding-bottom: 30px;
 }
 
+.team-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.team-title::after {
+  width: 180px;
+  background: #0d0058;
+}
+
+.team-title::before,
+.team-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+
+#team-member p {
+  padding-top: 40px;
+  font-size: 20px;
+  line-height: 30px;
+}
+/* TeamTitle css 지영 추가 End */
 .team-container {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  height: 50vh;
 }
 
 .member {
   display: inline-block;
   margin: 20px;
-  width: 200px;
+  width: 250px;
   position: relative;
 }
 
 .photo {
-  width: 200px;
-  height: 200px;
+  width: inherit;
+  height: inherit;
   position: relative;
   overflow: hidden;
   border-radius: 15px;
@@ -458,7 +483,7 @@ body {
 }
 
 .line-title::after {
-  width: 32px;
+  width: 60px;
   background: #0d0058;
 }
 
@@ -520,7 +545,7 @@ body {
   width: 100%;
   left: 0;
   top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
 .card-section .item-desc {
@@ -541,32 +566,29 @@ body {
 }
 
 .card-section .item-desc h3 {
-  margin: 0;
-}
-
-.card-section .item-desc p {
-  opacity: 0;
-  -webkit-transform: translateY(32px);
-  transform: translateY(32px);
-  transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
-}
-
-.card-section .item.active .item-desc h3 {
-  padding: 0;
-  margin: 0;
   font-size: 30px;
   font-family: 'TTLaundryGothicB';
 }
 
-.card-section .item.active .item-desc p {
-  line-height: 32px;
+.card-section .item-desc p {
+  opacity: 0;
   font-size: 20px;
-  padding-right: 0;
+  line-height: 32px;
+  font-family: 'Pretendard-Regular';
+  padding-right: 0 !important;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.4s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+
+.card-section .item.active .item-desc p {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
+
+
 
 .card-section .owl-theme.custom-carousel .owl-dots {
   margin-top: -20px !important;

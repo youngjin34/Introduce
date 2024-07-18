@@ -30,13 +30,13 @@
   gap: 5px;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 6px;
+  padding-bottom: 15px;
 }
 
 
 #postingBtn {
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 10px;
   border: 2px solid white;
   background-color: white;
   font-weight: bold;
@@ -50,7 +50,7 @@
 }
 
 .chatting-Bar-title {
-  margin-top: 8px;
+  padding: 15px 0 20px;
   font-family: 'TTLaundryGothicB';
 }
 
@@ -73,6 +73,9 @@
   padding: 0 20px 0 20px;
   overflow-y: scroll;
   height: 650px;
+  background-color: #82a9d1;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 #chat-title {
@@ -101,7 +104,8 @@
 }
 
 #present {
-  color: red;
+  color: #6056f7  ;
+  font-weight: 600;
 }
 
 #finger_animation {
@@ -109,5 +113,5 @@
 }
 
 #sendChat {
-  width: 16px;
+  width: 26px;
 }
