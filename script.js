@@ -152,20 +152,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${member.tmi}
             </div>
         `;
+    disableScroll();
   }
 
   // 닫기 버튼 누르면 모달 사라짐
   closeBtn.addEventListener('click', () => {
     teamModal.style.display = "none";
+    enableScroll();
   });
 
   // 모달 바깥화면 클릭 시 모달 사라짐
   window.addEventListener('click', event => {
     if (event.target === teamModal) {
       teamModal.style.display = 'none';
+      enableScroll();
     }
   });
 
+  function disableScroll() {
+    // 현재 페이지 스크롤 위치 가져오기
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    scrollLeft = window.scrollX || document.documentElement.scrollLeft,
+
+      // 스크롤을 시도하면 이전 값으로 설정
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
+  }
+
+  function enableScroll() {
+    window.onscroll = null;
+  }
+
+  function enableScroll() {
+    window.onscroll = null;
+  }
 
   const introduceBtn = document.getElementById("introduceBtn");
   const introduce = document.getElementById("introduce");
@@ -190,16 +211,20 @@ $(".custom-carousel").owlCarousel({
   autoWidth: true,
   loop: true
 });
+
 $(document).ready(function () {
   $(".custom-carousel .item").click(function () {
     $(".custom-carousel .item").not($(this)).removeClass("active");
     $(this).toggleClass("active");
   });
 });
+
 $('.top_btn').click(function () {
   $('html, body').animate({ scrollTop: '0' }, 680);
-})
+});
+
 $('.top_btn').bind('click', function () {
   $('html, body').animate({ scrollTop: '0' }, 680);
 });
+
 // 애니메이션 효과로 자연스럽게 이동됨, 0.68초
