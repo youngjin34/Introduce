@@ -1,5 +1,5 @@
 #F_div {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
 
   height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@
 }
 
 .chat-title {
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 #chatting-Bar {
@@ -33,7 +33,6 @@
   padding-bottom: 15px;
 }
 
-
 #postingBtn {
   cursor: pointer;
   border-radius: 10px;
@@ -51,7 +50,7 @@
 
 .chatting-Bar-title {
   padding: 15px 0 20px;
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 #inputBox {
@@ -66,7 +65,6 @@
 #inputBox::placeholder {
   font-weight: 500;
 }
-
 
 #chatting {
   width: 100%;
@@ -104,7 +102,7 @@
 }
 
 #present {
-  color: #6056f7  ;
+  color: #6056f7;
   font-weight: 600;
 }
 
@@ -115,3 +113,14 @@
 #sendChat {
   width: 26px;
 }
+
+/* .rightDiv:nth-child(even) {
+  text-align: end;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+} */
+
+/* .leftDiv:nth-child(odd) {
+  text-align: start;
+} */

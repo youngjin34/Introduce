@@ -2,18 +2,18 @@
 
 /* Main Text Style */
 @font-face {
-  font-family: 'TTLaundryGothicB';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2')
-    format('woff2');
+  font-family: "TTLaundryGothicB";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2")
+    format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 /* Sub Text Style */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -100,7 +100,7 @@ td {
 }
 
 body {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
   font-size: 32px;
 }
 
@@ -117,13 +117,13 @@ body {
   height: 60px;
   text-align: center;
   border-radius: 15px;
-  background-image: url('image/scroll_up.png');
+  background-image: url("image/scroll_up.png");
   background-size: contain;
 }
 
 /* ---- header  = 서영진 ---- */
 .team {
-  background: url('image/banner3.png') no-repeat;
+  background: url("image/banner3.png") no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -136,12 +136,12 @@ body {
 }
 
 .title {
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 .line-title,
 .team-title {
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 .team-content {
@@ -166,7 +166,7 @@ body {
 }
 
 .divBtn > button {
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 
   text-align: end;
   cursor: pointer;
@@ -280,7 +280,7 @@ body {
   padding: 120px 80px;
 }
 
-  /* TeamTitle css 지영 추가 Start */
+/* TeamTitle css 지영 추가 Start */
 .team-title {
   position: relative;
   width: 500px;
@@ -398,6 +398,7 @@ body {
 }
 
 .team_modal {
+  cursor: auto;
   height: 100vh;
   margin: auto;
   padding: 20px;
@@ -434,7 +435,7 @@ body {
 
 #member_name {
   padding-top: 20px;
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 #member_age {
@@ -469,7 +470,7 @@ body {
 
 .line-title::before,
 .line-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -528,7 +529,7 @@ body {
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   cursor: pointer;
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 .card-section .item.active {
@@ -538,7 +539,7 @@ body {
 }
 
 .card-section .item:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 100%;
@@ -567,14 +568,14 @@ body {
 
 .card-section .item-desc h3 {
   font-size: 30px;
-  font-family: 'TTLaundryGothicB';
+  font-family: "TTLaundryGothicB";
 }
 
 .card-section .item-desc p {
   opacity: 0;
   font-size: 20px;
   line-height: 32px;
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
   padding-right: 0 !important;
   -webkit-transform: translateY(32px);
   transform: translateY(32px);
@@ -587,8 +588,6 @@ body {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-
-
 
 .card-section .owl-theme.custom-carousel .owl-dots {
   margin-top: -20px !important;
