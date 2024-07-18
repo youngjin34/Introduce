@@ -280,7 +280,7 @@ body {
   padding: 120px 80px;
 }
 
-  /* TeamTitle css 지영 추가 Start */
+/* TeamTitle css 지영 추가 Start */
 .team-title {
   position: relative;
   width: 500px;
@@ -299,7 +299,7 @@ body {
 
 .team-title::before,
 .team-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -398,6 +398,7 @@ body {
 }
 
 .team_modal {
+  cursor: auto;
   height: 100vh;
   margin: auto;
   padding: 20px;
@@ -587,8 +588,6 @@ body {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-
-
 
 .card-section .owl-theme.custom-carousel .owl-dots {
   margin-top: -20px !important;
